@@ -1,7 +1,7 @@
 import { Heading } from '../components/Heading';
 import { Section } from '../components/Section';
 
-export const ContextDemo = () => {
+export const ContextApp = () => {
   return (
     <Section>
       <Heading>Title</Heading>
