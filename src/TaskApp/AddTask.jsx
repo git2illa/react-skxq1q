@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
 
-import { useContext } from "react";
 import { useState } from "react";
-import { TasksDispatchContext } from "../context/TaskContext";
+import { useTasksDispatch } from "../hooks/useTasks";
 
 let nextId = 3;
 
 export const AddTask = () => {
   const [text, setText] = useState("");
-  const dispatch = useContext(TasksDispatchContext)
+  const dispatch = useTasksDispatch();
   return (
     <>
       <input

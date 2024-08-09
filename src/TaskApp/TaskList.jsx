@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
 
-import { useContext } from "react";
 import { useState } from "react";
-import { TasksContext, TasksDispatchContext } from "../context/TaskContext";
+import { useTasks, useTasksDispatch } from "../hooks/useTasks";
 
 export const TaskList = () => {
-  const tasks = useContext(TasksContext);
+  const tasks = useTasks();
   return (
     <ul className="task-list">
       {tasks.map((task) => (
@@ -18,7 +17,7 @@ export const TaskList = () => {
 };
 
 const Task = ({ task }) => {
-  const dispatch = useContext(TasksDispatchContext);
+  const dispatch = useTasksDispatch();
 
   const [isEditting, setIsEditting] = useState(false);
   let taskContent;
